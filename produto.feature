@@ -10,33 +10,35 @@
             Contexto:
             Dado que eu acesse a página de configuração do produto do portal EBAC - SHOP
 
-            Cenário: Seleção de produto
-            Quando eu clicar no "tamanho"
+            Cenário: Adicionar produto
+            Quando eu clicar no botão "tamanho"
             E escolher a "cor"
-            Então deve exibir uma mensagem de alerta "O produto foi selecionado"
-
-            Cenário: Venda de produto
-            Quando eu clicar no "item"
             E adicionar a "quantidade"
-            Então deve exibir uma mensagem de alerta "Quantidade de produto é superior a 10"
+            E clicar no botão de "comprar"
+            Então deve exibir uma mensagem de alerta "O produto foi adicionado no carrinho"
 
-            Cenário: Limpar produto
-            Quando eu clicar no botão de "limpar"
-            E escolher o "produto"
-            Então deve exibir uma mensagem de alerta "Produto foi cancelado"
+            Cenário: Validação de produto
+            Quando eu digitar um número maior que 10 no campo "quantidade"
+            E clicar no botão de "comprar"
+            Então deve exibir uma mensagem de alerta "O número de itens adicionado ao carrinho não é permitido"
 
-            Esquema do Cenário: Verificação de produto
+            Cenário: Remover produtos
+            Quando eu clicar no botão "limpar"
+            E clicar no botão de "confirmar"
+            Então deve exibir uma mensagem de alerta "Carrinho vazio"
+
+
+            Esquema do Cenário: Adicionar produto
             Quando eu clicar no <tamanho>
-            E clicar na <cor>
-            E clicar em <item>
-            E clicar em <quantidade>
-            E fazer ação de <limpar>
+            E escolher a <cor>
+            E clicar na <quantidade>
+            E clicar no <botão>
             Então o sistema deve exibir a <mensagem> de sucesso
 
             Exemplos:
-            | tamanho | cor        | item       | quantidade | limpar      | mensagem                                 |
-            | "m"     | "vermelho" | "camisa"   | "5"        | "confirmar" | "O produto foi selecionado "             |
-            | "pp"    | "azul"     | "camiseta" | "12"       | "confirmar" | "Quantidade de produto é superior a 10 " |
-            | "m"     | "verde"    | "camisa"   | "2"        | "cancelar"  | "Produto foi cancelado "                 |
+            | tamanho | cor        | quantidade | botao   |                             mensagem                      |
+            | "m"     | "vermelho" |   5        | comprar |       "O produto foi adicionado no carrinho "             | 
+            | "pp"    | "azul"     |   10       | comprar |        "O produto foi adicionado no carrinho"             |
+            | "m"     | "verde"    |   15       | comprar | "O número de itens adicionado ao carrinho não é permitido"|
 
 
