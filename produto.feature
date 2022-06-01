@@ -28,7 +28,7 @@
             Então deve exibir uma mensagem de alerta "Carrinho vazio"
 
 
-            Esquema do Cenário: Adicionar produto
+            Esquema do Cenário: Verificar produto
             Quando eu clicar no <tamanho>
             E escolher a <cor>
             E clicar na <quantidade>

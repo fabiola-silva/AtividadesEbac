@@ -10,14 +10,13 @@
             Dado que eu acesse a página do portal EBAC - SHOP
 
             Cenário: Cadastro obrigatório
-            Quando eu digitar o no campo "nome"
-            E no campo "sobrenome"
-            E selecionar no campo "país"
-            E digitar no campo "endereço"
-            E digitar no campo "cidade"
-            E digitar no campo "CEP"
-            E digitar no campo "telefone"
-            E digitar no campo "e-mail"
+            Quando eu digitar os campos obrigatórios dos usuários:
+            
+            |  nome  | sobrenome |    pais  |    enederco     | cidade |   CEP    |  telefone |         e-mail          | 
+            |  João  | Carvalho  |   Roma   | Rua: das pedras | Itália | 69530252 | 9999-8888 |  joaocarvalho@teste.com |
+            | Tiago  |  Farias   | Portugal | Rua: dos montes | Lisboa | 58642696 | 9545-6687 |  tiagofarias@teste.com  |
+            | Bianca | OLiveira  |  Brasil  | Rua: dos pardos | Manaus | 69530616 | 9654-6874 |biancaoliveira@teste.com |
+
             E clicar no botao "finalizar compra"
             Então deve exibir uma mensagem de alerta "Dados cadastrados com sucesso"
 
